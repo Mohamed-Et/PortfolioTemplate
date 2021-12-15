@@ -1,0 +1,94 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+//!intro section
+.intro-header {
+  display: inline-block;
+  .span-intro {
+    font-family: 'Praise', cursive;
+    font-size: 3rem;
+    line-height: 0.8;
+    display: inline-block;
+    padding-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+      font-size: 4rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 5rem;
+    }
+  }
+  .span-description {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-bottom: 0.8rem;
+    line-height: 1.25;
+    @include media-breakpoint-up(md) {
+      font-size: 1.5rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 2rem;
+    }
+    .word {
+      font-weight: 400;
+      color: #ffeb4d;
+      text-transform: uppercase;
+    }
+  }
+}
+//!header text
+
+.header-custom {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: capitalize;
+  @include media-breakpoint-down(md) {
+    font-size: xx-large;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: x-large;
+  }
+}
+
+//! two lines layout
+.custom-line {
+  @include custom-lines;
+}
+.custom-line-m {
+  @include custom-lines;
+  margin-bottom: 5rem;
+}
+
+//! border end
+.border-end {
+  border-right: 1.5px solid $gray-600 !important;
+}
+
+//!display 6
+.display-6 {
+  font-family: 'Lato', sans-serif;
+  @include media-breakpoint-down(md) {
+    font-size: medium;
+    line-height: 1.5rem;
+    padding-left: 0.2rem;
+  }
+}
+.p-custom {
+  @include media-breakpoint-down(md) {
+    font-size: x-small;
+  }
+}
+//!change word font
+.word-font {
+  font-family: 'Lobster', cursive;
+  color: $purple-light;
+}
+.word-font-2 {
+  font-family: 'Lobster', cursive;
+  color: #faf538;
+}
+.word-font-3 {
+  font-family: 'Lobster', cursive;
+  color: $primary;
+}

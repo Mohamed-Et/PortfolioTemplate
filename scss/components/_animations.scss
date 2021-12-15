@@ -1,0 +1,25 @@
+@use '../custom' as *;
+//! keyframes define animations the example below shows
+//! that the animation pulse will last for 2seconds and
+//! repeat infinitly
+//?animation: pulse 2s infinite;
+@keyframes pulse-border {
+  //! 0% means at the begining do this
+  0% {
+    //? scale(0.95) means shrink the element on X & Y
+    //? direction by 5%
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($primary, 1);
+  }
+  //! 70% means after 1.4second do this
+  70% {
+    //? scale(1) means let it in its normal dimensions
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba($primary, 0);
+  }
+  //! 100% means at the end do this
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
+}

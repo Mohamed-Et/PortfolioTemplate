@@ -1,0 +1,50 @@
+@use '../custom' as *;
+.services {
+  margin-bottom: 10rem;
+  &--intro {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &--details {
+    .services-content {
+      i {
+        font-size: 3rem;
+        color: $primary;
+        @include media-breakpoint-down(md) {
+          font-size: 1.25rem;
+        }
+      }
+      h4 {
+        background-image: -webkit-linear-gradient(bottom, $primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include media-breakpoint-down(md) {
+          font-size: 1.15rem;
+        }
+      }
+      p {
+        font-family: 'Lato', sans-serif;
+        line-height: 1.45rem;
+        @include media-breakpoint-down(md) {
+          font-size: 0.85rem;
+          line-height: 1rem;
+        }
+      }
+    }
+    .service-img {
+      height: 100%;
+      img {
+        width: 75%;
+        transition: transform ease-out 0.2s;
+        @include media-breakpoint-down(md) {
+          width: 65%;
+        }
+        &:hover {
+          transform: scale(1.05);
+          filter: drop-shadow(5px 5px 3.5px $gray-500);
+        }
+      }
+    }
+  }
+}

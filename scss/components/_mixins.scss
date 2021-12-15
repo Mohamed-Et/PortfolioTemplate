@@ -1,0 +1,67 @@
+@use '../custom' as *;
+@mixin gradient {
+  background: linear-gradient(
+    to left,
+    rgba($primary, 0.95),
+    rgba($secondary, 0.95)
+  );
+}
+@mixin gradient-right {
+  background: linear-gradient(
+    to right,
+    rgba($primary, 0.85),
+    rgba($secondary, 0.85)
+  );
+}
+@mixin gradient-light {
+  background: linear-gradient(
+    to left,
+    rgba($primary, 0.85),
+    rgba($secondary, 0.85)
+  );
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin custom-lines {
+  &::before {
+    content: '';
+    width: 10rem;
+    height: 0.1rem;
+    //*Why display block
+    display: block;
+    //*center
+    margin: 0 auto;
+    background-color: $primary;
+  }
+  &::after {
+    content: '';
+    width: 3rem;
+    height: 0.3rem;
+    display: block;
+    margin: 0 auto;
+    background-color: $primary;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

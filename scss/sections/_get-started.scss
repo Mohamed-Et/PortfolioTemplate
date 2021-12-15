@@ -1,0 +1,96 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+#CTA {
+  background-color: rgba(#e1e1e1, 0.5);
+  padding: 5rem 0;
+
+  .text-col {
+    @include gradient-right;
+    padding: 4rem 2.5rem;
+    color: white;
+    .CTA-header {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      @include media-breakpoint-down(md) {
+        font-size: 2rem;
+      }
+      line-height: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .CTA-subheader {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.5rem;
+      }
+      margin-bottom: 1.25rem;
+    }
+    p {
+      @include media-breakpoint-down(md) {
+        font-size: 0.85rem;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      img {
+        width: 2rem;
+        margin: 0 0.5rem;
+      }
+      li {
+        @include media-breakpoint-down(md) {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+  .form-col {
+    background-color: white;
+    padding: 4rem 2.5rem;
+    h4 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      @include media-breakpoint-down(md) {
+        font-size: 2rem;
+      }
+      background-image: -webkit-linear-gradient(bottom, $primary, $secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+    }
+    span {
+      background-color: white;
+    }
+    img {
+      width: 2rem;
+    }
+
+    .CTA-btn {
+      position: relative;
+      border: 1.5px solid rgba($primary, 0.6);
+      padding: 0.5rem 0.4rem 0.5rem 1rem;
+      font-weight: 400;
+      font-size: 1.5rem;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.1rem;
+      color: white;
+      width: 80%;
+      @include gradient-right;
+      border-radius: 2rem;
+      margin: 0 auto;
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+      }
+      &:hover {
+        background-color: white;
+        background-image: -webkit-linear-gradient(bottom, $primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 1.85px solid $primary;
+      }
+    }
+  }
+}

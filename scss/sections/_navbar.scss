@@ -1,0 +1,32 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+.nav-custom {
+  @include gradient;
+  font-family: 'Lato', sans-serif;
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    padding: 0 0.7rem;
+    display: inline-block;
+    a {
+      text-transform: capitalize;
+      color: white !important;
+      font-weight: 600;
+    }
+    &::after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 3px;
+      width: 0px;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s ease;
+    }
+    &:hover::after {
+      width: 80%;
+      background: white;
+    }
+  }
+}

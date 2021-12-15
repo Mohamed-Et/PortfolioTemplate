@@ -1,0 +1,30 @@
+@use '../custom' as *;
+
+#companies-section {
+  margin-bottom: 3rem;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1.5rem;
+  }
+  .companies-intro {
+    margin-bottom: 8rem;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .company-img {
+    height: 3rem;
+    //*gives good effect to png images
+    filter: drop-shadow(8px 8px 3.5px $gray-500);
+    padding: 0.5rem;
+    text-align: center;
+    @include media-breakpoint-down(md) {
+      height: 2.5rem;
+    }
+
+    img {
+      //! set the height equals to the parent maximum height which is 3rem
+      height: 100%;
+    }
+  }
+}

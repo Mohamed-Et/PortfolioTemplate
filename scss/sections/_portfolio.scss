@@ -1,0 +1,64 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+#portfolio {
+  margin-bottom: 10rem;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1.5rem;
+  }
+  .content-container {
+    position: relative;
+    border-top: 0.5rem solid $primary;
+    height: 17rem;
+    @include media-breakpoint-down(md) {
+      height: 12rem;
+    }
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    //! on content container hover we change .position-container and .text-container
+    //! properties
+    &:hover {
+      img {
+        transform: scale(1.5);
+        transition: all 0.85s ease;
+      }
+      .position-container {
+        visibility: visible;
+        transition: all 0.85s ease;
+        opacity: 1;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    //! we position the .position-contaier div on top of the
+    //! content contaier, but we cant center the text inside it using @absolute center
+    //! bcuz the whole div will position center which wont let us do the hover effect
+    //! so instead we nest another div (text-contaier) which we can position in the center
+    .position-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      background: linear-gradient(
+        to right,
+        rgba($primary, 0.45),
+        rgba($secondary, 0.45)
+      );
+      opacity: 0;
+      visibility: hidden;
+      .text-container {
+        text-align: center;
+        @include absolute-center;
+        width: 100%;
+        h3 {
+          text-transform: uppercase;
+          display: block;
+        }
+      }
+    }
+  }
+}
